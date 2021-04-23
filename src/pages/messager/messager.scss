@@ -1,0 +1,80 @@
+@import "src/shared/styles/variables";
+
+.messagesList {
+  list-style-type: none;
+  padding: 70px 0 150px;
+  min-height: 100vh;
+  background-color: $main-back;
+
+  .messageItem + .messageItem {
+    margin-top: 10px;
+  }
+
+  .messageItem {
+    background-color: $side-back;
+    color: $main-content;
+    padding: 16px;
+
+    .head {
+      .username {
+        margin-right: 30px;
+      }
+
+      .time {
+
+      }
+    }
+
+    .body {
+      margin-top: 15px;
+    }
+  }
+}
+
+.sendMessageFormWrapper {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  border-top: 2px solid $sub-pale;
+}
+
+.sendMessageForm {
+  display: flex;
+
+  background-color: $side-back;
+  border: 2px solid $main-back;
+  padding: 30px 30px 50px;
+
+  input {
+    flex: 1 1 auto;
+    font-size: 22px;
+    background-color: transparent;
+    outline: none;
+    border: none;
+    border-bottom: 1px solid $sub-pale;
+    color: $main-content;
+    margin-right: 30px;
+    transition: all 1s ease;
+
+    &:hover, &:focus {
+      border-color: $main-content;
+    }
+  }
+
+  button {
+    padding: 10px 0;
+    flex: 0 0 200px;
+    font-size: 22px;
+    background-color: transparent;
+    border: 1px solid $sub-pale;
+    color: $main-content;
+    outline: none;
+    transition: all 1s ease;
+
+    &:hover, &:focus {
+      border-color: $main-content;
+    }
+  }
+}
+
