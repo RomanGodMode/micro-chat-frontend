@@ -14,17 +14,15 @@ const MessagerPage = () => {
 
   const handleSendMessage = useCallback((e: MouseEvent<HTMLButtonElement>) => {
     e.preventDefault()
-    sendMessage({ text: newMessage })
+    sendMessage(newMessage)
     setNewMessage("")
   }, [sendMessage, newMessage])
-
-  // TODO: Добавить в Message В дату и имя отправителя
 
   return (
     <div className="MessagerPage">
       <div className="container">
         <ul className="messagesList">
-          {messages.map((m, i) => <MessageItem key={Date.now() + i} {...m} userName={"Игорь"} />)}
+          {messages.map((m, i) => <MessageItem key={Date.now() + i} {...m} />)}
         </ul>
       </div>
       <div className="sendMessageFormWrapper">

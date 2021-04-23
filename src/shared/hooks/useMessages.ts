@@ -9,15 +9,20 @@ const socket = io("http://localhost:8080")
 export const useMessages = (onNewMessage?: () => void) => {
   const [messages, setMessages] = useState<Message[]>([])
 
-  const sendMessage = useCallback(({ text }: Message) => {
-    socket.emit("message", { text })
+  const sendMessage = useCallback((text: string) => {
+    const message: Message = {
+      text,
+      creationTime: new Date(Date.now()),
+      senderName: "Роома"
+    }
+    socket.emit("message", message)
   }, [])
 
-  const handleNewMessage = useCallback(({ text }: Message) => {
-    console.log(text)
-    setMessages(prevMessages => [...prevMessages, { text }])
+  const handleNewMessage = useCallback((message: Message) => {
+    console.log(message)
+    setMessages(prevMessages => [...prevMessages, { ...message, creationTime: new Date(message.creationTime) }])
     onNewMessage?.()
-  }, [])
+  }, [onNewMessage])
 
   useEffect(() => {
     socket.on("message", handleNewMessage)
