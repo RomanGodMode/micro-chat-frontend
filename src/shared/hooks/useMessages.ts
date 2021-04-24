@@ -5,7 +5,6 @@ import io from "socket.io-client"
 
 const socket = io("http://localhost:8080")
 
-//TODO: Бекенд должен отправлять или не отправлять клиенту Message базируясь на roomId
 
 export const useMessages = (roomId: string, onNewMessage?: () => void) => {
   const [messages, setMessages] = useState<Message[]>([])
@@ -26,11 +25,14 @@ export const useMessages = (roomId: string, onNewMessage?: () => void) => {
   }, [onNewMessage])
 
   useEffect(() => {
+    socket.emit("joinRoom", roomId)
+
     socket.on("message", handleNewMessage)
     return () => {
+      socket.emit("leaveRoom", roomId)
       socket.off("message", handleNewMessage)
     }
-  }, [handleNewMessage])
+  }, [handleNewMessage, roomId])
 
 
   return {
