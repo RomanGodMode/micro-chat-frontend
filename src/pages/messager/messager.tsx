@@ -2,13 +2,21 @@ import React, { MouseEvent, useCallback, useState } from "react"
 import "./messager.scss"
 import { MessageItem } from "./message-item/message-item"
 import { useMessages } from "../../shared/hooks/useMessages"
+import { useParams } from "react-router-dom"
 
-//TODO: Добавить страницу создания комнаты
+
+type MessagerPageParams = { id: string }
+
 
 const MessagerPage = () => {
+
+  const { id } = useParams<MessagerPageParams>() //TODO: взять id и прокинуть в useMessages
+
+
   const onNewMessage = useCallback(() => window.scrollTo(0, document.body.scrollHeight), [])
 
   const { messages, sendMessage } = useMessages(onNewMessage)
+
 
   const [newMessage, setNewMessage] = useState("")
 
