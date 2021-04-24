@@ -10,12 +10,12 @@ type MessagerPageParams = { id: string }
 
 const MessagerPage = () => {
 
-  const { id } = useParams<MessagerPageParams>() //TODO: взять id и прокинуть в useMessages
+  const { id } = useParams<MessagerPageParams>()
 
 
   const onNewMessage = useCallback(() => window.scrollTo(0, document.body.scrollHeight), [])
 
-  const { messages, sendMessage } = useMessages(onNewMessage)
+  const { messages, sendMessage } = useMessages(id, onNewMessage)
 
 
   const [newMessage, setNewMessage] = useState("")

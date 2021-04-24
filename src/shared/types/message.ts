@@ -3,3 +3,5 @@ export type Message = {
   creationTime: Date
   senderName: string
 }
+
+export type SendMessageDto = Message & { id: string }

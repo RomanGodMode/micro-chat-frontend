@@ -1,0 +1,23 @@
+@import "src/shared/styles/variables";
+
+.createRoomPage {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+
+  .createRoomForm {
+    display: flex;
+    flex-direction: column;
+    padding: 50px 50px 70px;
+    background-color: $side-back;
+
+    input {
+      margin-top: 40px;
+    }
+
+    button {
+      margin-top: 70px;
+    }
+  }
+}
