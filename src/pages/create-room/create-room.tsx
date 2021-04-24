@@ -2,11 +2,13 @@ import React, { MouseEvent, useCallback, useRef } from "react"
 import "./create-room.scss"
 import { generateRoomId } from "../../shared/functions/generate-room-id"
 import { useHistory } from "react-router-dom"
+import { useUser } from "../../shared/hooks/useUser"
 
 
 export const CreateRoomPage = () => {
 
   const history = useHistory()
+  const { setUserName } = useUser()
 
   const roomNameRef = useRef<HTMLInputElement>(null)
   const userNameRef = useRef<HTMLInputElement>(null)
@@ -15,8 +17,8 @@ export const CreateRoomPage = () => {
     e.preventDefault()
     const id = generateRoomId(roomNameRef.current!.value)
     history.push(`/rooms/${id}`)
-    //TODO: Я забыл про имя
-  }, [history])
+    setUserName!(userNameRef.current!.value)
+  }, [history, setUserName])
 
   return (
     <div className="createRoomPage">
