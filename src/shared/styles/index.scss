@@ -27,4 +27,33 @@ code {
   width: 100%;
 }
 
+input {
+  font-size: 22px;
+  background-color: transparent;
+  outline: none;
+  border: none;
+  border-bottom: 1px solid $sub-pale;
+  color: $main-content;
+  transition: all 1s ease;
+
+  &:hover, &:focus {
+    border-color: $main-content;
+  }
+}
+
+button {
+  padding: 10px 0;
+  font-size: 22px;
+  background-color: transparent;
+  border: 1px solid $sub-pale;
+  color: $main-content;
+  outline: none;
+  transition: all 1s ease;
+
+  &:hover, &:focus {
+    border-color: $main-content;
+    cursor: pointer;
+  }
+}
+
 

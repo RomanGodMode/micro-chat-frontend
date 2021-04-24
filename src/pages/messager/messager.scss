@@ -48,33 +48,11 @@
 
   input {
     flex: 1 1 auto;
-    font-size: 22px;
-    background-color: transparent;
-    outline: none;
-    border: none;
-    border-bottom: 1px solid $sub-pale;
-    color: $main-content;
     margin-right: 30px;
-    transition: all 1s ease;
-
-    &:hover, &:focus {
-      border-color: $main-content;
-    }
   }
 
   button {
-    padding: 10px 0;
     flex: 0 0 200px;
-    font-size: 22px;
-    background-color: transparent;
-    border: 1px solid $sub-pale;
-    color: $main-content;
-    outline: none;
-    transition: all 1s ease;
-
-    &:hover, &:focus {
-      border-color: $main-content;
-    }
   }
 }
 

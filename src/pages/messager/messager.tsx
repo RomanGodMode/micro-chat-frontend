@@ -3,7 +3,7 @@ import "./messager.scss"
 import { MessageItem } from "./message-item/message-item"
 import { useMessages } from "../../shared/hooks/useMessages"
 
-//TODO: Микро-хедер
+//TODO: Добавить страницу создания комнаты
 
 const MessagerPage = () => {
   const onNewMessage = useCallback(() => window.scrollTo(0, document.body.scrollHeight), [])
