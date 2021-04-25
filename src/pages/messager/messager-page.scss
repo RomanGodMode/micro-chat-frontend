@@ -1,0 +1,24 @@
+@import "src/shared/styles/variables";
+
+.MessagerPage {
+  min-height: 100vh;
+
+  .SelectUsernameFormWrapper {
+    min-height: 100vh;
+    max-width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .SelectUsernameForm {
+      display: flex;
+      flex-direction: column;
+      padding: 70px;
+      background-color: $side-back;
+
+      button {
+        margin-top: 30px;
+      }
+    }
+  }
+}

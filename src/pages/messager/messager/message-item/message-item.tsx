@@ -1,6 +1,6 @@
 import React, { FC } from "react"
-import { Message } from "../../../shared/types/message"
-import { getNormalTime } from "../../../shared/functions/get-normal-time"
+import { Message } from "../../../../shared/types/message"
+import { getNormalTime } from "../../../../shared/functions/get-normal-time"
 
 type Props = Message
 

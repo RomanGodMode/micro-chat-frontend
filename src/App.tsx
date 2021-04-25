@@ -1,6 +1,6 @@
 import React from "react"
 import { Route, Switch } from "react-router-dom"
-import MessagerPage from "./pages/messager/messager"
+import MessagerPage from "./pages/messager/messager-page"
 import { CreateRoomPage } from "./pages/create-room/create-room"
 
 

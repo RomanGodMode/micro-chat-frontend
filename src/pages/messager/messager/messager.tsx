@@ -1,22 +1,16 @@
-import React, { MouseEvent, useCallback, useState } from "react"
-import "./messager.scss"
+import React, { FC, MouseEvent, useCallback, useState } from "react"
+import { useMessages } from "../../../shared/hooks/useMessages"
 import { MessageItem } from "./message-item/message-item"
-import { useMessages } from "../../shared/hooks/useMessages"
-import { useParams } from "react-router-dom"
+import "./messager.scss"
 
+type Props = {
+  room: string
+}
 
-type MessagerPageParams = { id: string }
-
-
-const MessagerPage = () => {
-
-  const { id } = useParams<MessagerPageParams>()
-
-
+const Messager: FC<Props> = ({ room }) => {
   const onNewMessage = useCallback(() => window.scrollTo(0, document.body.scrollHeight), [])
 
-  const { messages, sendMessage } = useMessages(id, onNewMessage)
-
+  const { messages, sendMessage } = useMessages(room, onNewMessage)
 
   const [newMessage, setNewMessage] = useState("")
 
@@ -43,4 +37,4 @@ const MessagerPage = () => {
   )
 }
 
-export default MessagerPage
+export default Messager
